@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <remote  name="aosp" fetch="https://android.googlesource.com/" />
+  <remote  name="xt" fetch="https://git@github.com/xen-troops/" />
   <default revision="master" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp"/>
@@ -9,7 +10,7 @@
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
   </project>
-  <project path="common" name="kernel/common" revision="android-mainline" />
+  <project path="common" name="linux" remote="xt" revision="android11-5.4-master" />
   <project path="kernel/common-patches" name="kernel/common-patches" >
       <linkfile src="android-mainline" dest="common/patches" />
   </project>
